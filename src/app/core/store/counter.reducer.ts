@@ -1,5 +1,9 @@
 import { createReducer } from '@ngrx/store';
 
-const initialState = { value: 0 };
+export interface CounterState {
+  value: number;
+}
+
+const initialState: CounterState = { value: 0 };
 
 export const counterReducer = createReducer(initialState);
