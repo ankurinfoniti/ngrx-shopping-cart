@@ -1,1 +1,4 @@
 <p>counter works!</p>
+<p>counter: {{ counter$ | async }}</p>
+<p>counter signal: {{ counter() }}</p>
+<button class="btn" (click)="inc()">+</button>

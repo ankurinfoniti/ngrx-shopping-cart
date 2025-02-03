@@ -9,7 +9,12 @@ import { provideState, provideStore } from '@ngrx/store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 
 import { routes } from './app.routes';
-import { counterReducer } from './core/store/counter.reducer';
+import { counterReducer, CounterState } from './core/store/counter.reducer';
+
+export interface AppState {
+  home: number[];
+  counter: CounterState;
+}
 
 export const appConfig: ApplicationConfig = {
   providers: [
