@@ -3,6 +3,7 @@ import { Component, inject } from '@angular/core';
 import { Store } from '@ngrx/store';
 
 import { AppState } from '../../app.config';
+import { increment } from '../../core/store/counter.actions';
 
 @Component({
   selector: 'app-counter',
@@ -12,10 +13,9 @@ import { AppState } from '../../app.config';
 })
 export default class CounterComponent {
   store = inject(Store);
-  counter$ = this.store.select((state: AppState) => state.counter.value);
   counter = this.store.selectSignal((state: AppState) => state.counter.value);
 
   inc() {
-    this.store.dispatch({ type: 'increment' });
+    this.store.dispatch(increment());
   }
 }
