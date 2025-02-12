@@ -1,4 +1,3 @@
-import { AsyncPipe } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { Store } from '@ngrx/store';
 
@@ -7,7 +6,7 @@ import { increment } from '../../core/store/counter.actions';
 
 @Component({
   selector: 'app-counter',
-  imports: [AsyncPipe],
+  imports: [],
   templateUrl: './counter.component.html',
   styleUrl: './counter.component.css',
 })
