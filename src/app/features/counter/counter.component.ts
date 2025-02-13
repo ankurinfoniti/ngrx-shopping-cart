@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { Store } from '@ngrx/store';
 
 import { AppState } from '../../app.config';
-import { increment } from '../../core/store/counter.actions';
+import { decrement, increment, reset } from '../../core/store/counter.actions';
 
 @Component({
   selector: 'app-counter',
@@ -16,5 +16,13 @@ export default class CounterComponent {
 
   inc() {
     this.store.dispatch(increment());
+  }
+
+  dec() {
+    this.store.dispatch(decrement({ value: 2 }));
+  }
+
+  resetToZero() {
+    this.store.dispatch(reset());
   }
 }
